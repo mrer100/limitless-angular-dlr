@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<!-- Mirrored from demo.interface.club/limitless/demo/bs3/Template/layout_4/LTR/default/full/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Oct 2018 01:56:17 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Limitless - Responsive Web Application Kit by Eugene Kopyov</title>
+
+    <!-- Global stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+    <link href="../../global_assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
+    <link href="../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../../assets/css/core.min.css" rel="stylesheet" type="text/css">
+    <link href="../../assets/css/components.min.css" rel="stylesheet" type="text/css">
+    <link href="../../assets/css/colors.min.css" rel="stylesheet" type="text/css">
+    <!-- /global stylesheets -->
+
+    <!-- Core JS files -->
+    <script src="../../global_assets/js/plugins/loaders/pace.min.js"></script>
+    <script src="../../global_assets/js/core/libraries/jquery.min.js"></script>
+    <script src="../../global_assets/js/core/libraries/bootstrap.min.js"></script>
+    <script src="../../global_assets/js/plugins/loaders/blockui.min.js"></script>
+    <script src="../../global_assets/js/plugins/ui/nicescroll.min.js"></script>
+    <script src="../../global_assets/js/plugins/ui/drilldown.js"></script>
+    <!-- /core JS files -->
+
+    <!-- Theme JS files -->
+    <script src="../../global_assets/js/plugins/visualization/d3/d3.min.js"></script>
+    <script src="../../global_assets/js/plugins/visualization/d3/d3_tooltip.js"></script>
+    <script src="../../global_assets/js/plugins/forms/styling/switchery.min.js"></script>
+    <script src="../../global_assets/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
+    <script src="../../global_assets/js/plugins/ui/moment/moment.min.js"></script>
+    <script src="../../global_assets/js/plugins/pickers/daterangepicker.js"></script>
+
+    <script src="../../assets/js/app.js"></script>
+    <!--	<script src="../../global_assets/js/demo_pages/dashboard.js"></script>-->
+    <!-- /theme JS files -->
+    <!-- AngularJS -->
+    <script type="text/javascript" src="../../assets/js/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../../app.js"></script>
+    <script type="text/javascript" src="../../gtMain.js"></script>
+    <!--<script type="text/javascript" src="../menu.js"></script>-->
+    <script type="text/javascript" src="consumition.js"></script>
+    <!-- /AngularJS-->
+</head>
+
+<body>
+
+    <!-- Main navbar -->
+    <div class="navbar navbar-inverse">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="index.html"><img src="../../global_assets/images/logo_light.png" alt=""></a>
+
+            <ul class="nav navbar-nav pull-right visible-xs-block">
+                <li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
+            </ul>
+        </div>
+
+        <div class="navbar-collapse collapse" id="navbar-mobile">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <!--
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						<i class="icon-git-compare"></i>
+						<span class="visible-xs-inline-block position-right">Git updates</span>
+						<span class="badge bg-warning-400">9</span>
+					</a>-->
+
+                    <div class="dropdown-menu dropdown-content">
+                        <div class="dropdown-content-heading">
+                            Git updates
+                            <ul class="icons-list">
+                                <li><a href="#"><i class="icon-sync"></i></a></li>
+                            </ul>
+                        </div>
+
+                        <ul class="media-list dropdown-content-body width-350">
+                            <li class="media">
+                                <div class="media-left">
+                                    <a href="#" class="btn border-primary text-primary btn-flat btn-rounded btn-icon btn-sm"><i
+                                            class="icon-git-pull-request"></i></a>
+                                </div>
+
+                                <div class="media-body">
+                                    Drop the IE <a href="#">specific hacks</a> for temporal inputs
+                                    <div class="media-annotation">4 minutes ago</div>
+                                </div>
+                            </li>
+
+                            <li class="media">
+                                <div class="media-left">
+                                    <a href="#" class="btn border-warning text-warning btn-flat btn-rounded btn-icon btn-sm"><i
+                                            class="icon-git-commit"></i></a>
+                                </div>
+
+                                <div class="media-body">
+                                    Add full font overrides for popovers and tooltips
+                                    <div class="media-annotation">36 minutes ago</div>
+                                </div>
+                            </li>
+
+                            <li class="media">
+                                <div class="media-left">
+                                    <a href="#" class="btn border-info text-info btn-flat btn-rounded btn-icon btn-sm"><i
+                                            class="icon-git-branch"></i></a>
+                                </div>
+
+                                <div class="media-body">
+                                    <a href="#">Chris Arney</a> created a new <span class="text-semibold">Design</span>
+                                    branch
+                                    <div class="media-annotation">2 hours ago</div>
+                                </div>
+                            </li>
+
+                            <li class="media">
+                                <div class="media-left">
+                                    <a href="#" class="btn border-success text-success btn-flat btn-rounded btn-icon btn-sm"><i
+                                            class="icon-git-merge"></i></a>
+                                </div>
+
+                                <div class="media-body">
+                                    <a href="#">Eugene Kopyov</a> merged <span class="text-semibold">Master</span> and
+                                    <span class="text-semibold">Dev</span> branches
+                                    <div class="media-annotation">Dec 18, 18:36</div>
+                                </div>
+                            </li>
+
+                            <li class="media">
+                                <div class="media-left">
+                                    <a href="#" class="btn border-primary text-primary btn-flat btn-rounded btn-icon btn-sm"><i
+                                            class="icon-git-pull-request"></i></a>
+                                </div>
+
+                                <div class="media-body">
+                                    Have Carousel ignore keyboard events
+                                    <div class="media-annotation">Dec 12, 05:46</div>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="dropdown-content-footer">
+                            <a href="#" data-popup="tooltip" title="All activity"><i class="icon-menu display-block"></i></a>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="icon-people"></i>
+                        <span class="visible-xs-inline-block position-right">Users</span>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-content">
+                        <div class="dropdown-content-heading">
+                            Users online
+                            <ul class="icons-list">
+                                <li><a href="#"><i class="icon-gear"></i></a></li>
+                            </ul>
+                        </div>
+
+                        <ul class="media-list dropdown-content-body width-300">
+                            <li class="media">
+                                <div class="media-left"><img src="../../global_assets/images/demo/users/face18.jpg"
+                                        class="img-circle img-sm" alt=""></div>
+                                <div class="media-body">
+                                    <a href="#" class="media-heading text-semibold">Jordana Ansley</a>
+                                    <span class="display-block text-muted text-size-small">Lead web developer</span>
+                                </div>
+                                <div class="media-right media-middle"><span class="status-mark border-success"></span></div>
+                            </li>
+
+                            <li class="media">
+                                <div class="media-left"><img src="../../global_assets/images/demo/users/face24.jpg"
+                                        class="img-circle img-sm" alt=""></div>
+                                <div class="media-body">
+                                    <a href="#" class="media-heading text-semibold">Will Brason</a>
+                                    <span class="display-block text-muted text-size-small">Marketing manager</span>
+                                </div>
+                                <div class="media-right media-middle"><span class="status-mark border-danger"></span></div>
+                            </li>
+
+                            <li class="media">
+                                <div class="media-left"><img src="../../global_assets/images/demo/users/face17.jpg"
+                                        class="img-circle img-sm" alt=""></div>
+                                <div class="media-body">
+                                    <a href="#" class="media-heading text-semibold">Hanna Walden</a>
+                                    <span class="display-block text-muted text-size-small">Project manager</span>
+                                </div>
+                                <div class="media-right media-middle"><span class="status-mark border-success"></span></div>
+                            </li>
+
+                            <li class="media">
+                                <div class="media-left"><img src="../../global_assets/images/demo/users/face19.jpg"
+                                        class="img-circle img-sm" alt=""></div>
+                                <div class="media-body">
+                                    <a href="#" class="media-heading text-semibold">Dori Laperriere</a>
+                                    <span class="display-block text-muted text-size-small">Business developer</span>
+                                </div>
+                                <div class="media-right media-middle"><span class="status-mark border-warning-300"></span></div>
+                            </li>
+
+                            <li class="media">
+                                <div class="media-left"><img src="../../global_assets/images/demo/users/face16.jpg"
+                                        class="img-circle img-sm" alt=""></div>
+                                <div class="media-body">
+                                    <a href="#" class="media-heading text-semibold">Vanessa Aurelius</a>
+                                    <span class="display-block text-muted text-size-small">UX expert</span>
+                                </div>
+                                <div class="media-right media-middle"><span class="status-mark border-grey-400"></span></div>
+                            </li>
+                        </ul>
+
+                        <div class="dropdown-content-footer">
+                            <a href="#" data-popup="tooltip" title="All users"><i class="icon-menu display-block"></i></a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <p class="navbar-text"><span class="label bg-success-400">Online</span></p>
+
+            <ul class="nav navbar-nav navbar-right">
+
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="icon-bubbles4"></i>
+                        <span class="visible-xs-inline-block position-right">Messages</span>
+                        <span class="badge bg-warning-400">2</span>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-content width-350">
+                        <div class="dropdown-content-heading">
+                            Messages
+                            <ul class="icons-list">
+                                <li><a href="#"><i class="icon-compose"></i></a></li>
+                            </ul>
+                        </div>
+
+                        <ul class="media-list dropdown-content-body">
+                            <li class="media">
+                                <div class="media-left">
+                                    <img src="../../global_assets/images/demo/users/face10.jpg" class="img-circle img-sm"
+                                        alt="">
+                                    <span class="badge bg-danger-400 media-badge">5</span>
+                                </div>
+
+                                <div class="media-body">
+                                    <a href="#" class="media-heading">
+                                        <span class="text-semibold">James Alexander</span>
+                                        <span class="media-annotation pull-right">04:58</span>
+                                    </a>
+
+                                    <span class="text-muted">who knows, maybe that would be the best thing for me...</span>
+                                </div>
+                            </li>
+
+                            <li class="media">
+                                <div class="media-left">
+                                    <img src="../../global_assets/images/demo/users/face3.jpg" class="img-circle img-sm"
+                                        alt="">
+                                    <span class="badge bg-danger-400 media-badge">4</span>
+                                </div>
+
+                                <div class="media-body">
+                                    <a href="#" class="media-heading">
+                                        <span class="text-semibold">Margo Baker</span>
+                                        <span class="media-annotation pull-right">12:16</span>
+                                    </a>
+
+                                    <span class="text-muted">That was something he was unable to do because...</span>
+                                </div>
+                            </li>
+
+                            <li class="media">
+                                <div class="media-left"><img src="../../global_assets/images/demo/users/face24.jpg"
+                                        class="img-circle img-sm" alt=""></div>
+                                <div class="media-body">
+                                    <a href="#" class="media-heading">
+                                        <span class="text-semibold">Jeremy Victorino</span>
+                                        <span class="media-annotation pull-right">22:48</span>
+                                    </a>
+
+                                    <span class="text-muted">But that would be extremely strained and suspicious...</span>
+                                </div>
+                            </li>
+
+                            <li class="media">
+                                <div class="media-left"><img src="../../global_assets/images/demo/users/face4.jpg"
+                                        class="img-circle img-sm" alt=""></div>
+                                <div class="media-body">
+                                    <a href="#" class="media-heading">
+                                        <span class="text-semibold">Beatrix Diaz</span>
+                                        <span class="media-annotation pull-right">Tue</span>
+                                    </a>
+
+                                    <span class="text-muted">What a strenuous career it is that I've chosen...</span>
+                                </div>
+                            </li>
+
+                            <li class="media">
+                                <div class="media-left"><img src="../../global_assets/images/demo/users/face25.jpg"
+                                        class="img-circle img-sm" alt=""></div>
+                                <div class="media-body">
+                                    <a href="#" class="media-heading">
+                                        <span class="text-semibold">Richard Vango</span>
+                                        <span class="media-annotation pull-right">Mon</span>
+                                    </a>
+
+                                    <span class="text-muted">Other travelling salesmen live a life of luxury...</span>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="dropdown-content-footer">
+                            <a href="#" data-popup="tooltip" title="All messages"><i class="icon-menu display-block"></i></a>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="dropdown dropdown-user">
+                    <a class="dropdown-toggle" data-toggle="dropdown">
+                        <img src="../../global_assets/images/demo/users/face11.jpg" alt="">
+                        <span>dlr</span>
+                        <i class="caret"></i>
+                    </a>
+
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li><a href="#"><i class="icon-user-plus"></i> My profile</a></li>
+                        <li><a href="#"><i class="icon-coins"></i> My balance</a></li>
+                        <li><a href="#"><span class="badge badge-warning pull-right">58</span> <i class="icon-comment-discussion"></i>
+                                Messages</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#"><i class="icon-cog5"></i> Account settings</a></li>
+                        <li><a href="#"><i class="icon-switch2"></i> Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- /main navbar -->
+
+    <div ng-controller="app.views.employee.consumition as vm">
+        <!-- Second navbar -->
+        <div class="navbar navbar-default" id="navbar-second">
+            <ul class="nav navbar-nav no-border visible-xs-block">
+                <li><a class="text-center collapsed" data-toggle="collapse" data-target="#navbar-second-toggle"><i
+                            class="icon-menu7"></i></a></li>
+            </ul>
+
+            <div class="navbar-collapse collapse" id="navbar-second-toggle">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Archivo <span class="caret"></span>
+                        </a>
+                    </li>
+
+                    <li class="dropdown">
+                        <a   class="dropdown-toggle" data-toggle="dropdown">
+                            Registro <span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu width-200">
+
+                            <li class="dropdown-submenu dropdown-submenu-hover">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    Agregar</a>
+                                <ul class="dropdown-menu">
+
+                                    <li><a href="#" ng-click="vm.gofrom('viewlist','viewdetail')">
+                                            Consumo Interno</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+        <!-- /second navbar -->
+
+        <div id="viewlist">
+            <!-- Page header -->
+            <div class="page-header">
+                <div class="page-header-content">
+                    <div class="page-title">
+                        <h4>
+                            <i class="icon-arrow-left52 position-left"></i>
+                            <span class="text-semibold">Documentos de Ventas</span> - Consumos Internos
+
+                        </h4>
+                    </div>
+                </div>
+            </div>
+            <!-- /page header -->
+
+
+            <!-- Page container -->
+            <div class="page-container" ">
+
+                <!-- Page content -->
+                <div class="page-content">
+
+                    <!-- Main content -->
+                    <div class="content-wrapper">
+
+                        <!-- Main charts -->
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <div class="panel panel-flat">
+                                    <div class="panel-heading">
+
+                                        <div class="heading-elements">
+                                            <ul class="icons-list">
+
+                                                <li><a data-action="reload"></a></li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="table-responsive">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Fecha</th>
+                                                    <th>Monto</th>
+                                                    <th>Cliente</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>12/10/2018</td>
+                                                    <td>$ 33.28</td>
+                                                    <td>2</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="col-lg-7">
+                                <form class="form-horizontal" action="#">
+                                    <div class="panel panel-flat">
+                                        <div class="panel-heading">
+
+                                            <div class="heading-elements">
+
+                                            </div>
+                                        </div>
+
+                                        <div class="panel-body">
+                                            <div class="form-group">
+                                                <label class="col-xs-6 col-sm-2 control-label">Fecha:</label>
+                                                <div class="col-xs-6 col-sm-2">
+                                                    <div class="form-control-static">12/10/2018</div>
+                                                </div>
+                                                <label class="col-xs-6 col-sm-2 control-label">FORMULARIO:</label>
+                                                <div class="col-xs-6 col-sm-2">
+                                                    <div class="form-control-static">Ticket-Factura</div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-xs-2 col-sm-2 control-label">Sucursal:</label>
+                                                <div class="col-xs-1 col-sm-1">
+                                                    <div class="form-control-static">1</div>
+                                                </div>
+
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-xs-2  control-label">Cliente:</label>
+                                                <div class="col-xs-1 ">
+                                                    <div class="form-control-static">2</div>
+                                                </div>
+                                                <label class="col-xs-2   control-label">Nombre:</label>
+                                                <div class="col-xs-7 ">
+                                                    <div class="form-control-static">Jose Fernando Sosa </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-lg-2 control-label">Observacion:</label>
+                                                <div class="col-lg-9">
+                                                    <div class="form-control-static">
+                                                        <p>One morning, when Gregor Samsa woke from troubled dreams, he
+                                                            found
+                                                            himself transformed in his bed into a horrible vermin. He
+                                                            lay
+                                                            on
+                                                            his armour-like back, and if he lifted his head a little he
+                                                            could
+                                                            see his brown belly, slightly domed and divided by arches
+                                                            into
+                                                            stiff sections. The bedding was hardly able to cover it and
+                                                            seemed
+                                                            ready to slide off any moment.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+
+                                                <label class="col-xs-4  control-label"> MONTO TOTAL:</label>
+                                                <div class="col-xs-6 ">
+                                                    <div class="form-control-static">$ 33.12</div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </form>
+                            
+
+                            </div>
+                        </div>
+                        <!-- /main charts -->
+                    </div>
+                    <!-- /main content -->
+
+                </div>
+                <!-- /page content -->
+
+            </div>
+            <!-- /page container -->
+
+        </div>
+        <div id="viewdetail" style="display:none">
+            <!-- Page header -->
+            <div class="page-header">
+                <div class="page-header-content">
+                    <div class="page-title">
+                        <h4>
+                            <i class="icon-arrow-left52 position-left"></i>
+                            <span class="text-semibold">Detalle de consumo Interno</span>
+
+                        </h4>
+                    </div>
+                </div>
+            </div>
+            <!-- /page header -->
+
+
+            <!-- Page container -->
+            <div class="page-container">
+
+                <!-- Page content -->
+                <div class="page-content">
+                        <div class="row">
+                                
+            
+                                <div class="col-md-6 col-md-offset-3">
+                                    <form class="form-horizontal" action="#">
+                                        <div class="row">
+                                            <div class="col-md-10 col-md-offset-1">
+                                                <div class="panel panel-flat">
+                                                   
+            
+                                                    <div class="panel-body">
+                                                        <div class="form-group">
+                                                            <label class="col-lg-3 control-label">Cliente:</label>
+                                                            <div class="col-lg-9">
+                                                                <input type="text" class="form-control" >
+                                                            </div>
+                                                        </div>
+            
+                                                        <div class="form-group">
+                                                            <label class="col-lg-3 control-label">Fecha:</label>
+                                                            <div class="col-lg-9 off">
+                                                                <input type="password" class="form-control" placeholder="Your strong password">
+                                                            </div>
+
+                                                            <label class="col-lg-3 control-label">Fecha:</label>
+                                                            <div class="col-lg-9 off">
+                                                                <span class="input-group-addon"><i class="icon-calendar22"></i></span>
+                                                                <input type="text" class="form-control daterange-single" value="03/18/2013">
+                                                            </div>                                                           
+                                                        </div>
+            
+                                                        
+            
+                                                        <div class="form-group">
+                                                            <label class="col-lg-3 control-label">Attach screenshot:</label>
+                                                            <div class="col-lg-9">
+                                                                <input type="file" class="file-styled">
+                                                                <span class="help-block">Accepted formats: gif, png, jpg. Max file size 2Mb</span>
+                                                            </div>
+                                                        </div>
+            
+                                                        <div class="form-group">
+                                                            <label class="col-lg-3 control-label">Your message:</label>
+                                                            <div class="col-lg-9">
+                                                                <textarea rows="5" cols="5" class="form-control" placeholder="Enter your message here"></textarea>
+                                                            </div>
+                                                        </div>
+            
+                                                        <div class="text-right">
+                                                            <button type="submit" class="btn btn-primary">Submit form <i class="icon-arrow-right14 position-right"></i></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                </div>
+                <!-- /page content -->
+
+            </div>
+            <!-- /page container -->
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer text-muted">
+        &copy; 2015. <a href="#">Limitless Web App Kit</a> by <a href="http://themeforest.net/user/Kopyov" target="_blank">Eugene
+            Kopyov</a>
+    </div>
+    <!-- /footer -->
+
+</body>
+
+
+</html>
