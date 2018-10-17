@@ -12,15 +12,19 @@
     <title>Limitless - Responsive Web Application Kit by Eugene Kopyov</title>
 
     <!-- Global stylesheets -->
+
+
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
     <link href="../../global_assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
     <link href="../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="../../assets/css/core.min.css" rel="stylesheet" type="text/css">
     <link href="../../assets/css/components.min.css" rel="stylesheet" type="text/css">
     <link href="../../assets/css/colors.min.css" rel="stylesheet" type="text/css">
+
     <!-- /global stylesheets -->
 
     <!-- Core JS files -->
+
     <script src="../../global_assets/js/plugins/loaders/pace.min.js"></script>
     <script src="../../global_assets/js/core/libraries/jquery.min.js"></script>
     <script src="../../global_assets/js/core/libraries/bootstrap.min.js"></script>
@@ -30,14 +34,26 @@
     <!-- /core JS files -->
 
     <!-- Theme JS files -->
+
+
     <script src="../../global_assets/js/plugins/visualization/d3/d3.min.js"></script>
     <script src="../../global_assets/js/plugins/visualization/d3/d3_tooltip.js"></script>
     <script src="../../global_assets/js/plugins/forms/styling/switchery.min.js"></script>
     <script src="../../global_assets/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
     <script src="../../global_assets/js/plugins/ui/moment/moment.min.js"></script>
     <script src="../../global_assets/js/plugins/pickers/daterangepicker.js"></script>
+    <script src="../../global_assets/js/core/libraries/jquery_ui/interactions.min.js"></script>
+    <script src="../../global_assets/js/plugins/forms/selects/select2.min.js"></script>
+    <script src="../../global_assets/js/plugins/tables/datatables/datatables.min.js"></script>
+    <script src="../../global_assets/js/plugins/tables/datatables/extensions/select.min.js"></script>
+
+
+    <script src="../../global_assets/js/plugins/tables/datatables/extensions/buttons.min.js"></script>
+
 
     <script src="../../assets/js/app.js"></script>
+    <!-- <script src="../../global_assets/js/demo_pages/datatables_basic.js"></script> -->
+
     <!--	<script src="../../global_assets/js/demo_pages/dashboard.js"></script>-->
     <!-- /theme JS files -->
     <!-- AngularJS -->
@@ -49,7 +65,7 @@
     <!-- /AngularJS-->
 </head>
 
-<body>
+<body ng-controller="app.views.employee.consumition as vm">
 
     <!-- Main navbar -->
     <div class="navbar navbar-inverse">
@@ -345,283 +361,186 @@
     </div>
     <!-- /main navbar -->
 
-    <div ng-controller="app.views.employee.consumition as vm">
-        <!-- Second navbar -->
-        <div class="navbar navbar-default" id="navbar-second">
-            <ul class="nav navbar-nav no-border visible-xs-block">
-                <li><a class="text-center collapsed" data-toggle="collapse" data-target="#navbar-second-toggle"><i
-                            class="icon-menu7"></i></a></li>
+    <!-- Second navbar -->
+    <div class="navbar navbar-default" id="navbar-second">
+        <ul class="nav navbar-nav no-border visible-xs-block">
+            <li><a class="text-center collapsed" data-toggle="collapse" data-target="#navbar-second-toggle"><i class="icon-menu7"></i></a></li>
+        </ul>
+
+        <div class="navbar-collapse collapse" id="navbar-second-toggle">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown">
+                        Registro <span class="caret"></span>
+                    </a>
+
+                    <ul class="dropdown-menu width-200">
+
+                        <li class="dropdown-submenu dropdown-submenu-hover">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Agregar</a>
+                            <ul class="dropdown-menu">
+
+                                <li><a href="detailconsumition.html" >
+                                        Consumo Interno</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
             </ul>
 
-            <div class="navbar-collapse collapse" id="navbar-second-toggle">
-                <ul class="nav navbar-nav">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            Archivo <span class="caret"></span>
-                        </a>
-                    </li>
+        </div>
+    </div>
+    <!-- /second navbar -->
 
-                    <li class="dropdown">
-                        <a   class="dropdown-toggle" data-toggle="dropdown">
-                            Registro <span class="caret"></span>
-                        </a>
+    <!-- Page header -->
+    <div class="page-header">
+        <div class="page-header-content">
+            <div class="page-title">
+                <h4>
+                    <i class="icon-arrow-left52 position-left"></i>
+                    <span class="text-semibold">Documentos de Ventas</span> - Consumos Internos
 
-                        <ul class="dropdown-menu width-200">
-
-                            <li class="dropdown-submenu dropdown-submenu-hover">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    Agregar</a>
-                                <ul class="dropdown-menu">
-
-                                    <li><a href="#" ng-click="vm.gofrom('viewlist','viewdetail')">
-                                            Consumo Interno</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-
+                </h4>
             </div>
         </div>
-        <!-- /second navbar -->
-
-        <div id="viewlist">
-            <!-- Page header -->
-            <div class="page-header">
-                <div class="page-header-content">
-                    <div class="page-title">
-                        <h4>
-                            <i class="icon-arrow-left52 position-left"></i>
-                            <span class="text-semibold">Documentos de Ventas</span> - Consumos Internos
-
-                        </h4>
-                    </div>
-                </div>
-            </div>
-            <!-- /page header -->
+    </div>
+    <!-- /page header -->
 
 
-            <!-- Page container -->
-            <div class="page-container" ">
+    <!-- Page container -->
+    <div class="page-container">
 
-                <!-- Page content -->
-                <div class="page-content">
+        <!-- Page content -->
+        <div class="page-content">
 
-                    <!-- Main content -->
-                    <div class="content-wrapper">
+            <!-- Main content -->
+            <div class="content-wrapper">
 
-                        <!-- Main charts -->
-                        <div class="row">
-                            <div class="col-lg-5">
-                                <div class="panel panel-flat">
-                                    <div class="panel-heading">
+                <!-- Main charts -->
+                <div class="row">
+                    <div class="col-lg-5">
+                        <div class="panel panel-flat">
+                            <div class="panel-heading">
 
-                                        <div class="heading-elements">
-                                            <ul class="icons-list">
+                                <div class="heading-elements">
+                                    <ul class="icons-list">
 
-                                                <li><a data-action="reload"></a></li>
+                                        <li><a data-action="reload"></a></li>
 
-                                            </ul>
-                                        </div>
-                                    </div>
-
-
-
-                                    <div class="table-responsive">
-                                        <table class="table table-hover">
-                                            <thead>
-                                                <tr>
-                                                    <th>#</th>
-                                                    <th>Fecha</th>
-                                                    <th>Monto</th>
-                                                    <th>Cliente</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>12/10/2018</td>
-                                                    <td>$ 33.28</td>
-                                                    <td>2</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
+                                    </ul>
                                 </div>
-                                
                             </div>
 
-                            <div class="col-lg-7">
-                                <form class="form-horizontal" action="#">
-                                    <div class="panel panel-flat">
-                                        <div class="panel-heading">
 
-                                            <div class="heading-elements">
 
-                                            </div>
-                                        </div>
-
-                                        <div class="panel-body">
-                                            <div class="form-group">
-                                                <label class="col-xs-6 col-sm-2 control-label">Fecha:</label>
-                                                <div class="col-xs-6 col-sm-2">
-                                                    <div class="form-control-static">12/10/2018</div>
-                                                </div>
-                                                <label class="col-xs-6 col-sm-2 control-label">FORMULARIO:</label>
-                                                <div class="col-xs-6 col-sm-2">
-                                                    <div class="form-control-static">Ticket-Factura</div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-xs-2 col-sm-2 control-label">Sucursal:</label>
-                                                <div class="col-xs-1 col-sm-1">
-                                                    <div class="form-control-static">1</div>
-                                                </div>
-
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-xs-2  control-label">Cliente:</label>
-                                                <div class="col-xs-1 ">
-                                                    <div class="form-control-static">2</div>
-                                                </div>
-                                                <label class="col-xs-2   control-label">Nombre:</label>
-                                                <div class="col-xs-7 ">
-                                                    <div class="form-control-static">Jose Fernando Sosa </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-lg-2 control-label">Observacion:</label>
-                                                <div class="col-lg-9">
-                                                    <div class="form-control-static">
-                                                        <p>One morning, when Gregor Samsa woke from troubled dreams, he
-                                                            found
-                                                            himself transformed in his bed into a horrible vermin. He
-                                                            lay
-                                                            on
-                                                            his armour-like back, and if he lifted his head a little he
-                                                            could
-                                                            see his brown belly, slightly domed and divided by arches
-                                                            into
-                                                            stiff sections. The bedding was hardly able to cover it and
-                                                            seemed
-                                                            ready to slide off any moment.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-
-                                                <label class="col-xs-4  control-label"> MONTO TOTAL:</label>
-                                                <div class="col-xs-6 ">
-                                                    <div class="form-control-static">$ 33.12</div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </form>
-                            
-
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Fecha</th>
+                                            <th>Monto</th>
+                                            <th>Cliente</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="item in vm.consumitionList">
+                                            <td>{{item.id}}</td>
+                                            <td>{{item.date}}</td>
+                                            <td>{{item.monto}}</td>
+                                            <td>{{item.customer }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
-                        <!-- /main charts -->
+
                     </div>
-                    <!-- /main content -->
 
-                </div>
-                <!-- /page content -->
+                    <div class="col-lg-7">
+                        <form class="form-horizontal" action="#">
+                            <div class="panel panel-flat">
+                                <div class="panel-heading">
 
-            </div>
-            <!-- /page container -->
+                                    <div class="heading-elements">
 
-        </div>
-        <div id="viewdetail" style="display:none">
-            <!-- Page header -->
-            <div class="page-header">
-                <div class="page-header-content">
-                    <div class="page-title">
-                        <h4>
-                            <i class="icon-arrow-left52 position-left"></i>
-                            <span class="text-semibold">Detalle de consumo Interno</span>
+                                    </div>
+                                </div>
 
-                        </h4>
-                    </div>
-                </div>
-            </div>
-            <!-- /page header -->
+                                <div class="panel-body">
+                                    <div class="form-group">
+                                        <label class="col-xs-6 col-sm-2 control-label">Fecha:</label>
+                                        <div class="col-xs-6 col-sm-2">
+                                            <div class="form-control-static">12/10/2018</div>
+                                        </div>
+                                        <label class="col-xs-6 col-sm-2 control-label">FORMULARIO:</label>
+                                        <div class="col-xs-6 col-sm-2">
+                                            <div class="form-control-static">Ticket-Factura</div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-xs-2 col-sm-2 control-label">Sucursal:</label>
+                                        <div class="col-xs-1 col-sm-1">
+                                            <div class="form-control-static">1</div>
+                                        </div>
 
-
-            <!-- Page container -->
-            <div class="page-container">
-
-                <!-- Page content -->
-                <div class="page-content">
-                        <div class="row">
-                                
-            
-                                <div class="col-md-6 col-md-offset-3">
-                                    <form class="form-horizontal" action="#">
-                                        <div class="row">
-                                            <div class="col-md-10 col-md-offset-1">
-                                                <div class="panel panel-flat">
-                                                   
-            
-                                                    <div class="panel-body">
-                                                        <div class="form-group">
-                                                            <label class="col-lg-3 control-label">Cliente:</label>
-                                                            <div class="col-lg-9">
-                                                                <input type="text" class="form-control" >
-                                                            </div>
-                                                        </div>
-            
-                                                        <div class="form-group">
-                                                            <label class="col-lg-3 control-label">Fecha:</label>
-                                                            <div class="col-lg-9 off">
-                                                                <input type="password" class="form-control" placeholder="Your strong password">
-                                                            </div>
-
-                                                            <label class="col-lg-3 control-label">Fecha:</label>
-                                                            <div class="col-lg-9 off">
-                                                                <span class="input-group-addon"><i class="icon-calendar22"></i></span>
-                                                                <input type="text" class="form-control daterange-single" value="03/18/2013">
-                                                            </div>                                                           
-                                                        </div>
-            
-                                                        
-            
-                                                        <div class="form-group">
-                                                            <label class="col-lg-3 control-label">Attach screenshot:</label>
-                                                            <div class="col-lg-9">
-                                                                <input type="file" class="file-styled">
-                                                                <span class="help-block">Accepted formats: gif, png, jpg. Max file size 2Mb</span>
-                                                            </div>
-                                                        </div>
-            
-                                                        <div class="form-group">
-                                                            <label class="col-lg-3 control-label">Your message:</label>
-                                                            <div class="col-lg-9">
-                                                                <textarea rows="5" cols="5" class="form-control" placeholder="Enter your message here"></textarea>
-                                                            </div>
-                                                        </div>
-            
-                                                        <div class="text-right">
-                                                            <button type="submit" class="btn btn-primary">Submit form <i class="icon-arrow-right14 position-right"></i></button>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-xs-2  control-label">Cliente:</label>
+                                        <div class="col-xs-1 ">
+                                            <div class="form-control-static">2</div>
+                                        </div>
+                                        <label class="col-xs-2   control-label">Nombre:</label>
+                                        <div class="col-xs-7 ">
+                                            <div class="form-control-static">Jose Fernando Sosa </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-lg-2 control-label">Observacion:</label>
+                                        <div class="col-lg-9">
+                                            <div class="form-control-static">
+                                                <p>One morning, when Gregor Samsa woke from troubled dreams, he
+                                                    found
+                                                    himself transformed in his bed into a horrible vermin. He
+                                                    lay
+                                                    on
+                                                    his armour-like back, and if he lifted his head a little he
+                                                    could
+                                                    see his brown belly, slightly domed and divided by arches
+                                                    into
+                                                    stiff sections. The bedding was hardly able to cover it and
+                                                    seemed
+                                                    ready to slide off any moment.</p>
                                             </div>
                                         </div>
-                                    </form>
+                                    </div>
+                                    <div class="form-group">
+
+                                        <label class="col-xs-4  control-label"> MONTO TOTAL:</label>
+                                        <div class="col-xs-6 ">
+                                            <div class="form-control-static">$ 33.12</div>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
-                </div>
-                <!-- /page content -->
+                        </form>
 
+
+                    </div>
+                </div>
+                <!-- /main charts -->
             </div>
-            <!-- /page container -->
+            <!-- /main content -->
+
         </div>
+        <!-- /page content -->
 
     </div>
+    <!-- /page container -->
+
 
     <!-- Footer -->
     <div class="footer text-muted">
@@ -629,7 +548,6 @@
             Kopyov</a>
     </div>
     <!-- /footer -->
-
 </body>
 
 

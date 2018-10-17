@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<!-- Mirrored from demo.interface.club/limitless/demo/bs3/Template/layout_4/LTR/default/full/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Oct 2018 01:56:17 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Limitless - Responsive Web Application Kit by Eugene Kopyov</title>
+
+    <!-- Global stylesheets -->
+
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+    <link href="../../global_assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
+    <link href="../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../../assets/css/core.min.css" rel="stylesheet" type="text/css">
+    <link href="../../assets/css/components.min.css" rel="stylesheet" type="text/css">
+    <link href="../../assets/css/colors.min.css" rel="stylesheet" type="text/css">
+
+    <!-- /global stylesheets -->
+
+    <!-- Core JS files -->
+
+    <script src="../../global_assets/js/plugins/loaders/pace.min.js"></script>
+    <script src="../../global_assets/js/core/libraries/jquery.min.js"></script>
+    <script src="../../global_assets/js/core/libraries/bootstrap.min.js"></script>
+    <script src="../../global_assets/js/plugins/loaders/blockui.min.js"></script>
+    <script src="../../global_assets/js/plugins/ui/nicescroll.min.js"></script>
+    <script src="../../global_assets/js/plugins/ui/drilldown.js"></script>
+    <!-- /core JS files -->
+
+    <!-- Theme JS files -->
+
+
+    <script src="../../global_assets/js/plugins/visualization/d3/d3.min.js"></script>
+    <script src="../../global_assets/js/plugins/visualization/d3/d3_tooltip.js"></script>
+    <script src="../../global_assets/js/plugins/forms/styling/switchery.min.js"></script>
+    <script src="../../global_assets/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
+    <script src="../../global_assets/js/plugins/ui/moment/moment.min.js"></script>
+    <script src="../../global_assets/js/plugins/pickers/daterangepicker.js"></script>
+    <script src="../../global_assets/js/core/libraries/jquery_ui/interactions.min.js"></script>
+    <script src="../../global_assets/js/plugins/forms/selects/select2.min.js"></script>
+    <script src="../../global_assets/js/plugins/tables/datatables/datatables.min.js"></script>
+    <script src="../../global_assets/js/plugins/tables/datatables/extensions/select.min.js"></script>
+
+
+    <script src="../../global_assets/js/plugins/tables/datatables/extensions/buttons.min.js"></script>
+
+
+    <script src="../../assets/js/app.js"></script>
+    <!-- <script src="../../global_assets/js/demo_pages/datatables_basic.js"></script> -->
+
+    <!--	<script src="../../global_assets/js/demo_pages/dashboard.js"></script>-->
+    <!-- /theme JS files -->
+    <!-- AngularJS -->
+    <script type="text/javascript" src="../../assets/js/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../../app.js"></script>
+    <script type="text/javascript" src="../../gtMain.js"></script>
+    <!--<script type="text/javascript" src="../menu.js"></script>-->
+    <script type="text/javascript" src="consumition.js"></script>
+    <!-- /AngularJS-->
+</head>
+
+<body ng-controller="app.views.employee.consumition as vm">
+    <!-- Main navbar -->
+    <!-- Page header -->
+    <div class="page-header">
+        <div class="page-header-content">
+            <div class="page-title">
+                <h4>
+                    <i class="icon-arrow-left52 position-left"></i>
+                    <span class="text-semibold">Detalle de consumo Interno</span>
+
+                </h4>
+            </div>
+        </div>
+    </div>
+    <!-- /page header -->
+
+
+    <!-- Page container -->
+    <div class="page-container">
+
+        <!-- Page content -->
+        <div class="page-content">
+            <div class="row">
+
+
+                <div class="col-md-10 col-md-offset-1">
+                    <form class="form-horizontal" action="#">
+                        <div class="row">
+                            <div class="col-md-10 col-md-offset-1">
+                                <div class="panel panel-flat">
+
+
+                                    <div class="panel-body">
+                                        <div class="form-group">
+                                            <label class="col-lg-3 control-label">Cliente:</label>
+                                            <div class="col-lg-9">
+                                                <input type="text" ng-model="vm.consumointerno.consumidor.nombre" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-3 control-label">Fecha:</label>
+                                            <div class="col-lg-4">
+
+                                                <input type="text" class="form-control daterange-single" ng-model="vm.consumointerno.fecha">
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label">Sucursal:</label>
+                                            <div class="col-lg-9">
+                                                <select name="sucursallist" id="sucursallist" ng-model="vm.sucursal"
+                                                    class="form-control form-control-select2 select-search">
+                                                    <option ng-repeat="option in vm.sucursales" value="{{option.id}}">{{option.nombre}}</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-3 col-form-label">Detalee de articulos:</label>
+                                            <div class="col-lg-4">
+                                                <button ng-click="vm.showListDetail()" type="button" class="btn btn-light"
+                                                    data-toggle="modal" data-target="#modal_full">Articulos
+                                                </button>
+                                                <!--<button type="button" class="btn btn-light">Articulos</button>-->
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-form-label col-lg-3">Observaciones:</label>
+                                            <div class="col-lg-9">
+                                                <textarea rows="3" cols="3" class="form-control"></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="text-right">
+                                            <button type="submit" class="btn btn-light">Cancelar</button>
+                                            <button type="submit" class="btn btn-primary">
+                                                Aceptar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- /page content -->
+
+        </div>
+        <!-- /page container -->
+        <!-- Full width modal -->
+        <div id="modal_full" class="modal fade" tabindex="-1">
+            <div class="modal-dialog modal-full">
+                <div id="articleDocument" class="modal-content ">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Articulos del documento de consumo interno Ana paula</h5>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div class="modal-body">
+                        <!-- Scrollable datatable -->
+                        <div class="card">
+                            <div class="navbar-collapse collapse" id="navbar-second-toggle">
+                                <ul class="nav navbar-nav">
+
+
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle" data-toggle="dropdown">
+                                            Registro <span class="caret"></span>
+                                        </a>
+
+                                        <ul class="dropdown-menu width-200">
+
+                                            <li><a href="#" ng-click="vm.gofrom('viewlist','viewdetail')">
+                                                    Agregar</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+
+                            </div>
+                            <table class="table datatable-scroll-y table-bordered" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Job Title</th>
+                                        <th>DOB</th>
+
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Marth</td>
+                                        <td><a href="#">Enright</a></td>
+                                        <td>Traffic Court Referee</td>
+                                        <td>22 Jun 1972</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Marth</td>
+                                        <td><a href="#">Enright</a></td>
+                                        <td>Traffic Court Referee</td>
+                                        <td>22 Jun 1972</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Marth</td>
+                                        <td><a href="#">Enright</a></td>
+                                        <td>Traffic Court Referee</td>
+                                        <td>22 Jun 1972</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Marth</td>
+                                        <td><a href="#">Enright</a></td>
+                                        <td>Traffic Court Referee</td>
+                                        <td>22 Jun 1972</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Marth</td>
+                                        <td><a href="#">Enright</a></td>
+                                        <td>Traffic Court Referee</td>
+                                        <td>22 Jun 1972</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Marth</td>
+                                        <td><a href="#">Enright</a></td>
+                                        <td>Traffic Court Referee</td>
+                                        <td>22 Jun 1972</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Marth</td>
+                                        <td><a href="#">Enright</a></td>
+                                        <td>Traffic Court Referee</td>
+                                        <td>22 Jun 1972</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Marth</td>
+                                        <td><a href="#">Enright</a></td>
+                                        <td>Traffic Court Referee</td>
+                                        <td>22 Jun 1972</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Marth</td>
+                                        <td><a href="#">Enright</a></td>
+                                        <td>Traffic Court Referee</td>
+                                        <td>22 Jun 1972</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Marth</td>
+                                        <td><a href="#">Enright</a></td>
+                                        <td>Traffic Court Referee</td>
+                                        <td>22 Jun 1972</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Marth</td>
+                                        <td><a href="#">Enright</a></td>
+                                        <td>Traffic Court Referee</td>
+                                        <td>22 Jun 1972</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /scrollable datatable -->
+                        <!-- /basic datatable -->
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn bg-primary">Save changes</button>
+                    </div>
+                </div>
+                <div id="addArticleDocument" class="modal-content ">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Agregar articulos del documento de consumo interno Ana paula</h5>
+
+                    </div>
+
+                    <div class="modal-body">
+                        <!-- Basic layout-->
+                        <div class="card">
+                            <div class="card-header header-elements-inline">
+
+                                <div class="header-elements">
+                                    <div class="list-icons">
+                                        <a class="list-icons-item" data-action="collapse"></a>
+                                        <a class="list-icons-item" data-action="reload"></a>
+                                        <a class="list-icons-item" data-action="remove"></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card-body">
+                                <form action="#">
+                                    <div class="form-group row">
+                                        <label class="col-lg-3 col-form-label">Articulo:</label>
+                                        <div class="col-lg-7">
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <button class="btn btn-primary"> <i class="icon-search4 ml-2"></i></button>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-lg-3 col-form-label">Cantidad:</label>
+                                        <div class="col-lg-2">
+                                            <input type="number" min="1" class="form-control">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- /basic layout -->
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn bg-primary">Save changes</button>
+                    </div>
+                </div>
+                <div id="selectArticle" class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Seleccionar Articulo</h5>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div class="modal-body">
+                        <!-- Scrollable datatable -->
+                        <div class="card">
+                            <div class="navbar-collapse collapse" id="navbar-second-toggle">
+                                <ul class="nav navbar-nav">
+
+
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle" data-toggle="dropdown">
+                                            Registro <span class="caret"></span>
+                                        </a>
+
+                                        <ul class="dropdown-menu width-200">
+
+                                            <li><a href="#" ng-click="vm.gofrom('viewlist','viewdetail')">
+                                                    Agregar</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+
+                            </div>
+                            <table id="datatable-article" class="table  table-bordered" width="100%">
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                        <!-- /scrollable datatable -->
+                        <!-- /basic datatable -->
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn bg-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /full width modal -->
+    </div>
+
+
+    <!-- Footer -->
+    <div class="footer text-muted">
+        &copy; 2015. <a href="#">Limitless Web App Kit</a> by <a href="http://themeforest.net/user/Kopyov" target="_blank">Eugene
+            Kopyov</a>
+    </div>
+    <!-- /footer -->
+
+    </div>
+</body>
+
+
+</html>
